@@ -8,7 +8,10 @@
 %  cpoly is a 2 x (m+1) matrix whose first row consists of x-coordinates
 %  and second row of y-coordinates of m + 1 control points
 
-function [x, y] = decas_subdiv2(bx,by,n)
-
+function [x, y] = show_decas_subdiv2(bx,by,n)
+    x = empty(1, 3 * 2^n + 1);
+    y = empty(1, 3 * 2^n + 1);
+    
+    
 
 end
