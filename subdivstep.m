@@ -4,9 +4,6 @@ function [lpoly2] = subdivstep(lpoly)
     lpoly2 = zeros(2, 4, 2*l);
     
     for i = 1:l
-        disp(lpoly(:, :, i));
-        
-        subdecas(lpoly(:, :, i))
         [ld, ud] = subdecas(lpoly(:, :, i));
         lpoly2(:, :, 2*i - 1) = ld;
         lpoly2(:, :, 2*i) = ud;

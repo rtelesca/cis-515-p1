@@ -36,12 +36,4 @@ function [ud, ld] = subdecas(cpoly)
     ud = b0.';
     ld = [b0(4, :); b1(3, :); b2(2, :); b3(1, :)].';
     
-<<<<<<< HEAD
-=======
-    ud = b0;
-    ld = [b0(4, :); b1(3, :); b2(2, :); b3(1, :)];
-        
-    ud = ud.';
-    ld = ld.';
->>>>>>> f81579e15b9ed1168e0dee5d523ecec4ce1b4b0d
 end
