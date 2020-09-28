@@ -4,10 +4,10 @@ function [ud, ld] = subdecas(cpoly)
     x = cpoly(1, :);
     y = cpoly(2, :);
 
-    b0 = zeros(1, 4, 2);
-    b1 = zeros(1, 3, 2);
-    b2 = zeros(1, 2, 2);
-    b3 = zeros(1, 1, 2);
+    b0 = zeros(4, 2);
+    b1 = zeros(3, 2);
+    b2 = zeros(2, 2);
+    b3 = zeros(1, 2);
     
     b0(1, 1) = x(1);
     b0(1, 2) = y(1);
@@ -32,8 +32,8 @@ function [ud, ld] = subdecas(cpoly)
     
     b0(4, 1) = (1 - t) * b0(3, 1) + t * b1(3, 1);
     b0(4, 2) = (1 - t) * b0(3, 2) + t * b1(3, 2);    
+        
+    ud = b0.';
+    ld = [b0(4, :); b1(3, :); b2(2, :); b3(1, :)].';
     
-    ud = b0;
-    ld = [b0(4) b1(3) b2(2) b3(1)];
-
 end
