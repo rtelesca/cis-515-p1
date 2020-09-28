@@ -35,7 +35,7 @@ for p = 1:2
         plot(cpoly{p,i}(1,:),cpoly{p,i}(2,:),'-g');
         hold on
         for m = 1:M
-            [x, y] = decas_subdiv2(cpoly{p,i}(1,:)', cpoly{p,i}(2,:)', m);
+            [x, y] = show_decas_subdiv2(cpoly{p,i}(1,:)', cpoly{p,i}(2,:)', m);
             if m < M 
                 %  plot intermediate polyline
                 plot(x, y);
