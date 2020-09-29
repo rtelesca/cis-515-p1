@@ -9,21 +9,13 @@
 %  and second row of y-coordinates of m + 1 control points
 
 function [x, y] = show_decas_subdiv2(bx,by,n)
-    x = empty(1, 3 * 2^n + 1);
-    y = empty(1, 3 * 2^n + 1);
+    lpoly = [bx.'; by.'];
     
-    cpoly = [x; y];
-    
-    out = subdecas(cpoly);
-    
-    ld = out(1);
-    ud = out(2);
-    
-    % base case
-    if n == 0
-        print("hey");
+    for i = 0:n
+       lpoly = subdivstep(lpoly);
     end
     
-    show
+    [~, n, num] = size(lpoly);
 
+    [x, y] = makelist(lpoly, n, num);
 end
